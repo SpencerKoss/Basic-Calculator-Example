@@ -2,6 +2,11 @@
 //This program can take any type of data set by utilizing template functions in order to do the basic functions of 
 // a calculator using the same functions but in a different instance with different data types
 
+//Updated basicCalculatorExampleV2.0
+//Added basic example of 'Exception Handling' to show how useful it can be. I updated the divide() to be able to
+//catch if bad data were to be given (if data was given to try and divide by 0) to catch the error and report to the
+//console of the error
+
 #include "pch.h"
 #include <iostream>
 using namespace std;
@@ -20,6 +25,7 @@ template<class MyType>
 				throw 0;
 			}
 			//Also if you want to catch all errors then you would want to use (...) 
+
 			}catch (MyType x) {
 			cout << "ERROR: Can't Divide by zero, stupid!" << x << endl;
 			return 0;
@@ -89,19 +95,21 @@ int main()
 	cout << "The result of the Exception is: " << a << " divided by " << b << " is: " << divide(a, b) << endl;
 }
 
-/* result of 50 added by 3 is: 53
+/* The result of 50 added by 3 is: 53
 The result of 20.25 added by 15.13 is: 35.38
-The result of 7.5 added by 3.2 is : 10.7
-The result of 50 subtracted by 3 is : 47
-The result of 20.25 subtracted by 15.13 is : 5.12
-The result of 7.5 subtracted by 3.2 is : 4.3
-The result of 50 divided by 3 is : 16
-The result of 20.25 divided by 15.13 is : 1.3384
-The result of 7.5 divided by 3.2 is : 2.34375
-The result of 50 multiplied by 3 is : 150
-The result of 20.25 multiplied by 15.13 is : 306.382
-The result of 7.5 multiplied by 3.2 is : 24
-The result of 50 squared by  is : 2500
-The result of 20.25 squared by  is : 410.063
-The result of 7.5 squared by  is : 56.25
+The result of 7.5 added by 3.2 is: 10.7
+The result of 50 subtracted by 3 is: 47
+The result of 20.25 subtracted by 15.13 is: 5.12
+The result of 7.5 subtracted by 3.2 is: 4.3
+The result of 50 divided by 3 is: 16
+The result of 20.25 divided by 15.13 is: 1.3384
+The result of 7.5 divided by 3.2 is: 2.34375
+The result of 50 multiplied by 3 is: 150
+The result of 20.25 multiplied by 15.13 is: 306.382
+The result of 7.5 multiplied by 3.2 is: 24
+The result of 50 squared by  is: 2500
+The result of 20.25 squared by  is: 410.063
+The result of 7.5 squared by  is: 56.25
+ERROR: Can't Divide by zero, stupid!0
+The result of the Exception is: 2 divided by 0 is: 0
 */
