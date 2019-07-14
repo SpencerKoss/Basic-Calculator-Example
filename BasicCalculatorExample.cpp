@@ -14,6 +14,16 @@ template<class MyType>
 
 	template<class MyType>
 	MyType divide(MyType x, MyType y) {
+		try {
+			//Catching if y is equal to 0
+			if (y == 0) {
+				throw 0;
+			}
+			//Also if you want to catch all errors then you would want to use (...) 
+			}catch (MyType x) {
+			cout << "ERROR: Can't Divide by zero, stupid!" << x << endl;
+			return 0;
+			}
 	return x / y;
 }
 
@@ -40,7 +50,7 @@ int main()
 	int x = 50;
 	int y = 3;
 
-	//Setting doubles for 
+	//Setting for doubles
 	double w = 20.25;
 	double v = 15.13;
 
@@ -73,6 +83,10 @@ int main()
 	cout << "The result of " << w << " squared by " << " is: " << square(w) << endl;
 	cout << "The result of " << t << " squared by " << " is: " << square(t) << endl;
 
+	int a = 2, b = 0;
+
+	//Checking Exception ERRORS
+	cout << "The result of the Exception is: " << a << " divided by " << b << " is: " << divide(a, b) << endl;
 }
 
 /* result of 50 added by 3 is: 53
